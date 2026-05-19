@@ -390,7 +390,7 @@ Primary implementation responsibilities include:
 - GitHub Actions CI/CD pipelines
 - Deployment sequencing & infrastructure orchestration
 - Personal AVD architecture implementation
-<br>
+
 ### Core Stack
 <p align="left">
   <img width="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" />
