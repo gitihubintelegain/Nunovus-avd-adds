@@ -390,11 +390,8 @@ Primary implementation responsibilities include:
 - GitHub Actions CI/CD pipelines
 - Deployment sequencing & infrastructure orchestration
 - Personal AVD architecture implementation
-
 <br>
-
 ### Core Stack
-
 <p align="left">
   <img width="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" />
   <img width="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" />
@@ -402,9 +399,6 @@ Primary implementation responsibilities include:
   <img width="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg" />
   <img width="42" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows11/windows11-original.svg" />
 </p>
-
 <div align="center">
-
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0078D4,100:7C4DFF&height=70&section=footer"/>
-
 </div>
