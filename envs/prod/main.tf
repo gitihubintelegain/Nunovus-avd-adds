@@ -36,8 +36,8 @@ locals {
   # Customer + Environment
   ########################################
 
-  client_name   = "Nunovus"
-  environment   = "prod"
+  client_name = "Nunovus"
+  environment = "prod"
 
   ########################################
   # Azure Region
@@ -87,7 +87,6 @@ resource "azurerm_resource_group" "avd" {
 
 module "network" {
 
-  # During development use local path
   source = "git::https://github.com/darshanthenge03-cloud/terraform-azure-modules.git//network"
 
   resource_group_name = azurerm_resource_group.network.name
@@ -141,7 +140,7 @@ module "adds" {
   # Networking
   ########################################
 
-  subnet_id          = module.network.subnet_ids["${local.prefix}-snet-ad"]
+  subnet_id = module.network.subnet_ids["${local.prefix}-snet-ad"]
 
   private_ip_address = "10.0.2.4"
 
@@ -155,6 +154,12 @@ module "adds" {
   vm_size = "Standard_B2ms"
 
   ########################################
+  # OS Disk
+  ########################################
+
+  os_disk_type = "StandardSSD_LRS"
+
+  ########################################
   # Credentials
   ########################################
 
@@ -165,7 +170,7 @@ module "adds" {
   # Active Directory
   ########################################
 
-  domain_name        = "Landwise.com"
+  domain_name        = "landwise.com"
   safe_mode_password = var.admin_password
 
   ########################################
@@ -192,10 +197,9 @@ resource "azurerm_virtual_network_dns_servers" "dns" {
 ########################################
 # AVD Module
 ########################################
-  
+
 module "avd" {
 
-  # During development use local path
   source = "git::https://github.com/darshanthenge03-cloud/terraform-azure-modules.git//avd"
 
   ########################################
@@ -220,6 +224,16 @@ module "avd" {
   location            = local.location
 
   ########################################
+  # Personal Host Pool
+  ########################################
+
+  host_pool_type     = "Personal"
+
+  load_balancer_type = "Persistent"
+
+  max_sessions       = 1
+
+  ########################################
   # Session Hosts
   ########################################
 
@@ -228,6 +242,18 @@ module "avd" {
   session_host_count = 7
 
   vm_size = "Standard_D2alds_v6"
+
+  ########################################
+  # Windows Image
+  ########################################
+
+  image_sku = "win11-22h2-ent"
+
+  ########################################
+  # OS Disk
+  ########################################
+
+  os_disk_type = "Premium_LRS"
 
   ########################################
   # Credentials
@@ -240,8 +266,10 @@ module "avd" {
   # Domain Join
   ########################################
 
-  domain_name     = "Landwise.com"
-  domain_user     = "azureuser"
+  domain_name = "landwise.com"
+
+  domain_user = "azureuser"
+
   domain_password = var.admin_password
 
   ########################################
