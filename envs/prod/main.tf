@@ -11,10 +11,10 @@ terraform {
   }
 
   backend "azurerm" {
-    resource_group_name  = "rg-dalberg-terraform-state"
-    storage_account_name = "tfstatedalbergdevstr"
+    resource_group_name  = "rg-nunovus-terraform-state"
+    storage_account_name = "tfstatenunovusprodstr"
     container_name       = "tfstate"
-    key                  = "dalberg-dev-avd.tfstate"
+    key                  = "nunovus-prod-avd.tfstate"
   }
 }
 
@@ -36,15 +36,15 @@ locals {
   # Customer + Environment
   ########################################
 
-  client_name   = "dalberg"
-  environment   = "dev"
+  client_name   = "Nunovus"
+  environment   = "prod"
 
   ########################################
   # Azure Region
   ########################################
 
-  location      = "Central India"
-  location_code = "cin"
+  location      = "East US"
+  location_code = "eus"
 
   ########################################
   # Naming Prefix
@@ -152,7 +152,7 @@ module "adds" {
   vm_name       = "${local.prefix}-dc-01"
   computer_name = "dc01"
 
-  vm_size = "Standard_D2s_v5"
+  vm_size = "Standard_B2ms"
 
   ########################################
   # Credentials
@@ -165,7 +165,7 @@ module "adds" {
   # Active Directory
   ########################################
 
-  domain_name        = "dalberg.local"
+  domain_name        = "Landwise.com"
   safe_mode_password = var.admin_password
 
   ########################################
@@ -225,9 +225,9 @@ module "avd" {
 
   vm_name_prefix = "${local.prefix}-avd-vm"
 
-  session_host_count = 1
+  session_host_count = 7
 
-  vm_size = "Standard_D4s_v5"
+  vm_size = "Standard_D2alds_v6"
 
   ########################################
   # Credentials
@@ -240,7 +240,7 @@ module "avd" {
   # Domain Join
   ########################################
 
-  domain_name     = "dalberg.local"
+  domain_name     = "Landwise.com"
   domain_user     = "azureuser"
   domain_password = var.admin_password
 
