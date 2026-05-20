@@ -112,7 +112,7 @@ module "network" {
     "${local.prefix}-snet-ad" = "10.0.2.0/24"
 
     # Bastion
-    "${local.prefix}-snet-bastion" = "10.0.3.0/27"
+    "AzureBastionSubnet" = "10.0.3.0/26"
 
     # VPN Gateway
     "GatewaySubnet" = "10.0.4.0/27"
