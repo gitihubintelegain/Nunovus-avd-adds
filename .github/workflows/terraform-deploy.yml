@@ -122,8 +122,8 @@ jobs:
     needs: apply-foundation
 
     steps:
-      - name: Wait 10 Minutes
-        run: sleep 600
+      - name: Wait 1 Minutes
+        run: sleep 60
 
   ########################################
   # APPLY PERSONAL AVD
