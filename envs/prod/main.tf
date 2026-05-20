@@ -157,7 +157,6 @@ module "adds" {
   # OS Disk
   ########################################
 
-  os_disk_type = "StandardSSD_LRS"
 
   ########################################
   # Credentials
