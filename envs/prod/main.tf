@@ -36,7 +36,7 @@ locals {
   # Customer + Environment
   ########################################
 
-  client_name = "Nunovus"
+  client_name = "landwise"
   environment = "prod"
 
   ########################################
