@@ -240,7 +240,7 @@ module "avd" {
 
   session_host_count = 7
 
-  vm_size = "Standard_D2alds_v6"
+  vm_size = "Standard_D2s_v3"
 
   ########################################
   # Windows Image
@@ -267,7 +267,7 @@ module "avd" {
 
   domain_name = "landwise.com"
 
-  domain_user = "azureuser"
+  domain_user = "azureadmin"
 
   domain_password = var.admin_password
 
