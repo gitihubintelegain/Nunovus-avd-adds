@@ -246,7 +246,7 @@ module "avd" {
   # Windows Image
   ########################################
 
-  image_sku = "win11-22h2-ent"
+  image_sku = "win11-24h2-avd"
 
   ########################################
   # OS Disk
