@@ -238,7 +238,7 @@ module "avd" {
 
   vm_name_prefix = "${local.prefix}-avd-vm"
 
-  session_host_count = 2
+  session_host_count = 1
 
   vm_size = "Standard_D2s_v3"
 
